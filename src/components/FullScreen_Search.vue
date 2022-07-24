@@ -30,7 +30,7 @@ function filteredList(input){
      <li style="color:#fff; display:inline" v-for="item in resultsearch" :key="item.identifier">
      
      <div class="elsearch">
-     <span><img  :src="item.image"/></span><router-link :to="'/detailProduct/'+item.identifier">{{ item.name }}</router-link>
+     <span><img  :src="item.image"/></span><router-link :to="'/productPage/'+item.identifier">{{ item.name }}</router-link>
      
      </div>
      
