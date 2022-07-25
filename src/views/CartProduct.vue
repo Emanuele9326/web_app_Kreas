@@ -21,7 +21,7 @@ function totalitem(art) {
 </script>
 
 <template>
-  <div class="container p-0">
+  <div class="container p-0 cartprod">
     <div class="row my-4 ">
       <h1 class="my-md-4">Carrello</h1>
     </div>
@@ -88,7 +88,7 @@ function totalitem(art) {
 </template>
 
 <style>
-.row{
+.cartprod .row{
   margin: 0px;
 
 }

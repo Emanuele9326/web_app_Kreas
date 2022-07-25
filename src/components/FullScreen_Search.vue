@@ -1,48 +1,65 @@
 <script setup>
-import { storeProduct } from '../stores/store_product';
-import { ref } from 'vue';
+import { storeProduct } from "../stores/store_product";
+import { ref } from "vue";
 
 const productStore = storeProduct();
-const products= productStore.products;
-const resultsearch=ref([]);
+const products = productStore.products;
+const resultsearch = ref([]);
 
 function closeSearch() {
   document.getElementById("myOverlay").style.display = "none";
 }
 
-function filteredList(input){
-    let results= products.filter((product)=> 
-    product.name.toLowerCase().includes(input.toLowerCase()));
+function filteredList(input) {
+  let results = products.filter((product) =>
+    product.name.toLowerCase().includes(input.toLowerCase())
+  );
 
-    resultsearch.value=results;
+  resultsearch.value = results;
 }
 </script>
 <template>
-<div id="myOverlay" class="overlay overflow-auto">
-  <span class="closebtn" @click="closeSearch()" title="Close Overlay">×</span>
-  <div class="overlay-content">
-    <form>
-      <input type="text" v-model="input" @input="filteredList(input)" placeholder="Search.." name="search">
-     
-    </form>
-    <div class="result">
-     <ul style="color:#fff; width:100%; height:100%" >
-     <li style="color:#fff; display:inline" v-for="item in resultsearch" :key="item.identifier">
-     
-     <div class="elsearch">
-     <span><img  :src="item.image"/></span><router-link :to="'/productPage/'+item.identifier">{{ item.name }}</router-link>
-     
-     </div>
-     
-     </li>
-     
-     </ul>
+  <div id="myOverlay" class="overlay overflow-auto">
+    <span class="closebtn" @click="closeSearch()" title="Close Overlay">×</span>
+    <div class="overlay-content">
+      <form>
+        <input
+          type="text"
+          v-model="input"
+          @input="filteredList(input)"
+          placeholder="Search.."
+          name="search"
+        />
+      </form>
+      <div class="result">
+        <div
+          class="row p-0 my-3 mx-0 group"
+          style="display: inline color: #fff; width: 100%; height: 100%"
+          v-for="item in resultsearch"
+              :key="item.identifier"
+             
+        >
+          <div class="col col-sm-3 p-0 my-3">
+            <img  class="imgscr" :src="item.image" />
+          </div>
+          <div class="col col-sm-9 p-0">
+            <div
+              class="row  row_name"
+              
+            >
+              <div class="col p-0">
+                <router-link :to="'/productPage/' + item.identifier">{{
+                  item.name
+                }}</router-link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </template>
 <style>
-
 .overlay {
   height: 100%;
   width: 100%;
@@ -51,9 +68,8 @@ function filteredList(input){
   z-index: 1000;
   top: 0;
   left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
-
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .overlay-content {
@@ -65,9 +81,8 @@ function filteredList(input){
   margin: 10px;
 }
 .overlay input {
-
-    float: none !important;
-    width: 85% !important;
+  float: none !important;
+  width: 85% !important;
 }
 
 .overlay .closebtn {
@@ -83,8 +98,7 @@ function filteredList(input){
   color: #ccc;
 }
 
-
-.overlay input[type=text] {
+.overlay input[type="text"] {
   padding: 15px;
   font-size: 17px;
   border: none;
@@ -93,7 +107,7 @@ function filteredList(input){
   background: white;
 }
 
-.overlay input[type=text]:hover {
+.overlay input[type="text"]:hover {
   background: #f1f1f1;
 }
 
@@ -110,45 +124,34 @@ function filteredList(input){
 .overlay button:hover {
   background: #bbb;
 }
-.result{
-    width: 85%;
-    text-align: start;
-    margin-top: 2.5rem;
-    font-size: large;
-    margin:10px;
+.imgscr{
+  width: 70%;
 }
-.elsearch{
- display:block;
-}
-.elsearch img{
-margin:10px;
-width:80px; 
-height:80px
+.result {
+  width: 85%;
+  text-align: start;
+  margin-top: 2.5rem;
+  font-size: large;
+  margin: 10px;
 }
 
-.result li{
- list-style: none;
-}
-.result li a{
-    color:#fff;
+ #myOverlay .row_name{
+         margin-top: 2rem !important;
+    }
+
+.result  a {
+  color: #fff;
 }
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
  
+  
   .result {
     margin-top: 2.5rem;
+    margin-left: 5rem;
     font-size: x-large;
-}
+  }
 
-.elsearch{
- display:block;
-}
-.elsearch img{
-margin:10px;
-width:100px; 
-height:100px
-}
- 
 
 
 }
