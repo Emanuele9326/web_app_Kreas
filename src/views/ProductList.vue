@@ -278,6 +278,7 @@ span {
     border-radius: 0px;
   }
   .card-img-top {
+    
      border-top-left-radius:0px;
     border-top-right-radius:0px;
   }

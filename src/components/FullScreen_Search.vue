@@ -5,6 +5,7 @@ import { ref } from "vue";
 const productStore = storeProduct();
 const products = productStore.products;
 const resultsearch = ref([]);
+const input=ref('');
 
 function closeSearch() {
   document.getElementById("myOverlay").style.display = "none";
@@ -36,17 +37,13 @@ function filteredList(input) {
           class="row p-0 my-3 mx-0 group"
           style="display: inline color: #fff; width: 100%; height: 100%"
           v-for="item in resultsearch"
-              :key="item.identifier"
-             
+          :key="item.identifier"
         >
           <div class="col col-sm-3 p-0 my-3">
-            <img  class="imgscr" :src="item.image" />
+            <img class="imgscr" :src="item.image" />
           </div>
           <div class="col col-sm-9 p-0">
-            <div
-              class="row  row_name"
-              
-            >
+            <div class="row row_name">
               <div class="col p-0">
                 <router-link :to="'/productPage/' + item.identifier">{{
                   item.name
@@ -124,7 +121,7 @@ function filteredList(input) {
 .overlay button:hover {
   background: #bbb;
 }
-.imgscr{
+.imgscr {
   width: 70%;
 }
 .result {
@@ -135,24 +132,19 @@ function filteredList(input) {
   margin: 10px;
 }
 
- #myOverlay .row_name{
-         margin-top: 2rem !important;
-    }
+#myOverlay .row_name {
+  margin-top: 2rem !important;
+}
 
-.result  a {
+.result a {
   color: #fff;
 }
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
- 
-  
   .result {
     margin-top: 2.5rem;
     margin-left: 5rem;
     font-size: x-large;
   }
-
-
-
 }
 </style>

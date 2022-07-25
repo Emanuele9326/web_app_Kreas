@@ -166,8 +166,10 @@ function openSearch() {
   z-index: 0; 
 }
 .card-img-top{
-  padding-left: 0.5rem;
+  padding-left: 0rem;
+  margin-left: 8px;
 }
+
 .description{
     width: 100vw;
     height: 100vh;
@@ -175,7 +177,7 @@ function openSearch() {
     color: #fff;
   }
   .productPage {
-    top: 120px;
+    top: 60px;
     color: #fff;
  
   }
@@ -191,6 +193,7 @@ function openSearch() {
     background-color: #7a3620;
   }
 }
+
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
   .productPage {
@@ -218,7 +221,6 @@ function openSearch() {
   .card-img-top{
     width: 70%;
   }
-  .addcart {
-  }
+  
 }
 </style>
