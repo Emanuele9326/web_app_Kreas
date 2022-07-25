@@ -177,7 +177,7 @@ padding-left: 10px;
  }
  .totalprice {
   text-align: end;
-  margin: 10px 60px !important;
+  margin: 10px 0px !important;
 }
 .offset{
   right: 74px;
