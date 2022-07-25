@@ -19,6 +19,7 @@ function totalitem(art) {
   return total;
 }
 </script>
+
 <template>
   <div class="container p-0">
     <div class="row my-4 ">

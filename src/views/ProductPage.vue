@@ -32,9 +32,9 @@ function openSearch() {
         <div class="col search_basket">
           <div style="margin-top: 0.5rem; text-align: end">
             <span span="icon_basket">
-              <router-link to="/cartProduct" class="p-0 p-sm-3">
+              <router-link to="/cartProduct" class="p-0 p-sm-3 me-3">
                 <i style="font-size: 24px">
-                  <img class="nav_icon" src="../assets/icon/basket.svg" />
+                  <img class="nav_icon " src="../assets/icon/basket.svg" />
                 </i>
                 <span
                   v-if="productStore.quantityProducts > 0"
@@ -129,7 +129,7 @@ function openSearch() {
 
 .icon_search {
   padding-left: 0;
-  padding-right: 10px;
+  padding-right: 6px;
 }
 
 .nav_icon {

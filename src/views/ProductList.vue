@@ -21,9 +21,9 @@ function openSearch() {
           <div class="col">
             <div class="div_navicon ">
               <span >
-                <router-link aria-current="page" to="/cartProduct">
+                <router-link aria-current="page" to="/cartProduct" class="me-4">
                   <i style="font-size: 24px">
-                    <img class="nav_icon" src="../assets/icon/basket.svg" />
+                    <img class="nav_icon " src="../assets/icon/basket.svg" />
                   </i>
                   <span
                     v-if="productStore.quantityProducts > 0"
@@ -101,6 +101,7 @@ function openSearch() {
 }
 
 .nav_icon {
+ 
   margin: 0px;
 }
 .items {
