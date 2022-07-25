@@ -177,7 +177,10 @@ padding-left: 10px;
  }
  .totalprice {
   text-align: end;
-  margin: 10px 60px;
+  margin: 10px 60px !important;
+}
+.offset{
+  right: 74px;
 }
 }
 /* Medium devices (tablets, 768px and up)*/
