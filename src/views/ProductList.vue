@@ -278,7 +278,7 @@ span {
     border-radius: 0px;
   }
   .card-img-top {
-    
+     margin: 0px;
      border-top-left-radius:0px;
     border-top-right-radius:0px;
   }

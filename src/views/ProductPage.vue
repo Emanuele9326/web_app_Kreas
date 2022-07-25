@@ -165,9 +165,9 @@ function openSearch() {
   display: contents;
   z-index: 0; 
 }
-.card-img-top{
+.detailProduct .card-img-top{
   padding-left: 0rem;
-  margin-left: 8px;
+ margin: 1rem;
 }
 
 .description{
