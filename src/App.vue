@@ -30,6 +30,7 @@ a {
 @media (hover: hover) {
   a:hover {
     background-color: transparent;
+    cursor: pointer;
   }
   .btn:hover {
     color: #7a3620 !important ;
