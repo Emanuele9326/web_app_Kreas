@@ -73,6 +73,7 @@ function openSearch() {
           <p class="card-text m-2">
             {{ detail.description }}
           </p>
+          <h5 class=" card-text m-2">{{ detail.price }} €</h5>
           <div class="d-grid gap-2 col-6 mx-auto">
             <button
               type="button"
