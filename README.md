@@ -67,8 +67,8 @@ L'app può essere testata in locale eseguendo i seguenti passaggi:
 - Aprire la folder del progetto con un terminale, ed eseguire il comando "npm install".
 
 - Testare l'app in locale tramite il comando "npm run dev".
-
-![](img-README/img4.png)
+##
+![](/src/assets/img/run.png)
 
 ## Licenza
 
