@@ -10,7 +10,7 @@ function removeCart_item(id) {
   if (store.quantityProducts <= 3) {
     store.cartTotalAmount;
   } else {
-    this.totalPriceDiscount;
+     store.totalPriceDiscount;
   }
 }
 
