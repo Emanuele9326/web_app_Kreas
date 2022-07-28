@@ -7,7 +7,7 @@ const cartItem = store.cartItems;
 function removeCart_item(id) {
   let i = cartItem.findIndex((item) => item.identifier == id);
   cartItem.splice(i, 1);
-  if (this.quantityProducts <= 3) {
+  if (store.quantityProducts <= 3) {
     this.cartTotalAmount;
   } else {
     this.totalPriceDiscount;
