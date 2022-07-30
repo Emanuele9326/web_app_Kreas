@@ -5,19 +5,19 @@ import axios from 'axios'
 
 
 export const storeProduct = defineStore({
-        id: 'listproduct',
+        id: 'storeproduct',
         state: () => ({
             products: [],
 
             cartItems: [],
 
-            detailproduct: [],
+            detailproduct: {},
 
         }),
 
         getters: {
 
-            // totale carrello senza sconto
+            // cart total without discount
             cartTotalAmount: (state) => {
 
                 return state.cartItems.reduce((total, product) => {
@@ -30,7 +30,7 @@ export const storeProduct = defineStore({
 
             },
 
-            //quantità prodotti presenti nel carrello
+            //quantity of products in the cart
             quantityProducts: (state) => {
 
                 return state.cartItems.reduce((quantityProductsCart, product) => {
@@ -38,7 +38,7 @@ export const storeProduct = defineStore({
                 }, 0)
             },
 
-            // prezzo scontato se articoli > 3
+            // discounted price if items> 3
             totalPriceDiscount: (state) => {
                 let discountValue = ((state.cartTotalAmount * 10) / 100);
                 let discountedPrice = (state.cartTotalAmount - discountValue).toFixed(2);
