@@ -1,6 +1,10 @@
 <script setup>
+import { useRouter } from "vue-router";
 import { storeProduct } from "../stores/store_product";
 import { ref } from "vue";
+
+const router=useRouter();
+console.log(router)
 
 const productStore = storeProduct();
 const products = productStore.products;
@@ -18,6 +22,20 @@ function filteredList(input) {
 
   resultsearch.value = results;
 }
+
+function closeClick(id){
+  let currentRoute= router.currentRoute.value.name;
+  if(currentRoute == 'ProductPage'){
+    window.location.href='/productPage/'+id
+  }else{
+    router.push('/productPage/'+id);
+  }
+  
+}
+
+
+
+
 </script>
 <template>
   <div id="myOverlay" class="overlay overflow-auto">
@@ -45,9 +63,9 @@ function filteredList(input) {
           <div class="col col-sm-9 p-0">
             <div class="row row_name">
               <div class="col p-0">
-                <router-link :to="'/productPage/' + item.identifier">{{
+                <h5  @click="closeClick(item.identifier)" >{{
                   item.name
-                }}</router-link>
+                }}</h5>
               </div>
             </div>
           </div>
@@ -136,8 +154,9 @@ function filteredList(input) {
   margin-top: 2rem !important;
 }
 
-.result a {
+.result h5 {
   color: #fff;
+  cursor: pointer;
 }
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {

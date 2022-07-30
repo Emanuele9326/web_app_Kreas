@@ -19,6 +19,8 @@ function totalitem(art) {
   let total = (art.price * art.quantity).toFixed(2);
   return total;
 }
+
+
 </script>
 
 <template>
@@ -206,7 +208,6 @@ padding-left: 10px;
     padding-left: 25px;
   }
   .offset {
-    
     padding-right: 3.5rem;
   }
   .rimuovi{
