@@ -26,8 +26,10 @@ function filteredList(input) {
 function closeClick(id){
   let currentRoute= router.currentRoute.value.name;
   if(currentRoute == 'ProductPage'){
-    router.push('/productPage/'+id);
-    //window.location.href='/productPage/'+id
+    //router.push('/productPage/'+id);
+     //document.getElementById("myOverlay").style.display = "none";
+      location.href='https://incandescent-toffee-0c303a.netlify.app/productPage/'+id
+    
   }else{
     router.push('/productPage/'+id);
   }
