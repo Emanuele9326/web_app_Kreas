@@ -26,6 +26,7 @@ function filteredList(input) {
 function closeClick(id){
   let currentRoute= router.currentRoute.value.name;
   if(currentRoute == 'ProductPage'){
+    router.push('/productPage/'+id);
     window.location.href='/productPage/'+id
   }else{
     router.push('/productPage/'+id);
