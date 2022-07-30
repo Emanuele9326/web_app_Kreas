@@ -7,13 +7,14 @@ const cartItem = store.cartItems;
 function removeCart_item(id) {
   let i = cartItem.findIndex((item) => item.identifier == id);
   cartItem.splice(i, 1);
-  if (store.quantityProducts <4) {
+  if (store.quantityProducts < 4) {
     store.cartTotalAmount;
   } else {
      store.totalPriceDiscount;
   }
 }
 
+//calculate the total price for each product
 function totalitem(art) {
   let total = (art.price * art.quantity).toFixed(2);
   return total;
@@ -180,7 +181,7 @@ padding-left: 10px;
   margin: 10px 0px !important;
 }
 .offset{
-  right: 74px;
+  padding-right: 2rem;
 }
 }
 /* Medium devices (tablets, 768px and up)*/
@@ -205,7 +206,8 @@ padding-left: 10px;
     padding-left: 25px;
   }
   .offset {
-    right: 90px;
+    
+    padding-right: 3.5rem;
   }
   .rimuovi{
     margin-left: 30px;

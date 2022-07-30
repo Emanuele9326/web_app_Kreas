@@ -1,0 +1,25 @@
+From 397da4a8415e02aa28b321b7faf20c6a3f018a85 Mon Sep 17 00:00:00 2001
+From: EMANUELE <emanuelemarra93@outlook.com>
+Date: Thu, 28 Jul 2022 20:07:33 +0200
+Subject: [PATCH] Update CartProduct.vue
+
+---
+ src/views/CartProduct.vue | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/views/CartProduct.vue b/src/views/CartProduct.vue
+index 03dd166..1742d8c 100644
+--- a/src/views/CartProduct.vue
++++ b/src/views/CartProduct.vue
+@@ -10,7 +10,7 @@ function removeCart_item(id) {
+   if (store.quantityProducts <= 3) {
+     store.cartTotalAmount;
+   } else {
+-    this.totalPriceDiscount;
++     store.totalPriceDiscount;
+   }
+ }
+ 
+-- 
+2.34.1.windows.1
+
