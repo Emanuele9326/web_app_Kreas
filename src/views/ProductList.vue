@@ -30,7 +30,7 @@ productStore.getProducts();
                 </router-link>
               </span>
               <span>
-              <router-link aria-current="page" to="/fullSearch" class="me-4">
+              <router-link aria-current="page" to="/fullSearch" class="me-2">
               <img
                   class="nav_icon"
                  
