@@ -3,15 +3,13 @@ import { useRoute } from "vue-router";
 import { storeProduct } from "../stores/store_product.js";
 
 const route = useRoute();
-
 let id = route.params.id;
 
-//detail product
 const productStore = storeProduct();
 productStore.productDetails(id);
-
 const detail = productStore.detailproduct;
 </script>
+
 <template>
   <div class="detailProduct">
     <div class="nav_bar">
@@ -76,6 +74,7 @@ const detail = productStore.detailproduct;
     </div>
   </div>
 </template>
+
 <style>
 .detailProduct {
   padding: 0px;

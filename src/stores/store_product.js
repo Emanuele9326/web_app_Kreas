@@ -1,6 +1,4 @@
 import { defineStore } from 'pinia'
-
-
 import axios from 'axios'
 
 
@@ -113,20 +111,10 @@ export const storeProduct = defineStore({
 
             }
 
-
-
-
-
-
         },
 
 
         persist: true
-
-
-
-
-
 
     },
 

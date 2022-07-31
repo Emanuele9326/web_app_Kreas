@@ -10,7 +10,7 @@ function removeCart_item(id) {
   if (store.quantityProducts < 4) {
     store.cartTotalAmount;
   } else {
-     store.totalPriceDiscount;
+    store.totalPriceDiscount;
   }
 }
 
@@ -19,13 +19,11 @@ function totalitem(art) {
   let total = (art.price * art.quantity).toFixed(2);
   return total;
 }
-
-
 </script>
 
 <template>
   <div class="container p-0 cartprod">
-    <div class="row my-4 ">
+    <div class="row my-4">
       <h1 class="my-md-4">Carrello</h1>
     </div>
     <div class="container p-0">
@@ -36,7 +34,7 @@ function totalitem(art) {
         <div class="col-6 col-sm-7 p-0">
           <div class="container p-0 elproduct">
             <div class="row">
-              <h4 class="mt-2  fs-3 ">{{ item.name }}</h4>
+              <h4 class="mt-2 fs-3">{{ item.name }}</h4>
             </div>
             <div class="row btn_price">
               <div class="col">
@@ -59,18 +57,20 @@ function totalitem(art) {
                 </div>
               </div>
               <div class="col p-0">
-                <div class="my-1  fs-5 itempc">{{ totalitem(item) }}€</div>
+                <div class="my-1 fs-5 itempc">{{ totalitem(item) }}€</div>
               </div>
             </div>
-            <div class=" mb-3 fw-bold">
-              <a class="fs-6 ps-2 rimuovi" @click="removeCart_item(item.identifier)">Rimuovi</a>
+            <div class="mb-3 fw-bold">
+              <a class="fs-6 ps-2 rimuovi" @click="removeCart_item(item.identifier)"
+                >Rimuovi</a
+              >
             </div>
           </div>
         </div>
       </div>
 
       <div class="row totalprice container" v-if="store.quantityProducts < 4">
-        <h2  class="offset">Totale: {{ store.cartTotalAmount }}€</h2>
+        <h2 class="offset">Totale: {{ store.cartTotalAmount }}€</h2>
       </div>
       <div class="row totalprice" v-else>
         <h3 class="offset">{{ store.cartTotalAmount }}€</h3>
@@ -79,8 +79,8 @@ function totalitem(art) {
       </div>
       <div class="row py-4" style="text-align: center">
         <div class="col-5 backwards_a">
-          <router-link to="/" >
-             <button class="btn backwards fw-bold">Indietro</button>
+          <router-link to="/">
+            <button class="btn backwards fw-bold">Indietro</button>
           </router-link>
         </div>
 
@@ -91,14 +91,13 @@ function totalitem(art) {
 </template>
 
 <style>
-.cartprod .row{
+.cartprod .row {
   margin: 0px;
-
 }
 .backwards {
   width: 100%;
   background-color: rgba(220, 99, 58, 0.555);
-   color: #fff !important;
+  color: #fff !important;
 }
 .backwards_a a {
   color: #fff !important;
@@ -113,10 +112,9 @@ function totalitem(art) {
 .elproduct {
   background-color: rgba(245, 109, 64, 0.432);
   height: 100%;
-  
 }
-.img{
-  padding: 0px ;
+.img {
+  padding: 0px;
 }
 .img_product {
   width: 100%;
@@ -147,48 +145,50 @@ function totalitem(art) {
   padding-right: 0.1rem;
 }
 .btn-secondary:hover {
-    color: #fff !important;
-    background-color: #7a3620;
-    border-color: #7a3620;
+  color: #fff !important;
+  background-color: #7a3620;
+  border-color: #7a3620;
 }
- .itempc{
-   padding: 11px 0px;
- }
-@media (min-width: 425px){
- .itempc{
-   padding: 18px 0px;
- }
- .plus_less{
-padding: 10px 10px;
- }
- .less{
-padding-left: 10px;
- }
- .btn-group span {
-  margin: 0.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
- .btn_price{
-  margin-top: 10px;
- }
+.itempc {
+  padding: 11px 0px;
 }
 
-@media(min-width: 576px){
-.btn_price{
-  margin-top: 10px;
- }
- .totalprice {
-  text-align: end;
-  margin: 10px 0px !important;
+
+@media (min-width: 425px) {
+  .itempc {
+    padding: 18px 0px;
+  }
+  .plus_less {
+    padding: 10px 10px;
+  }
+  .less {
+    padding-left: 10px;
+  }
+  .btn-group span {
+    margin: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .btn_price {
+    margin-top: 10px;
+  }
 }
-.offset{
-  padding-right: 2rem;
-}
+
+@media (min-width: 576px) {
+  .btn_price {
+    margin-top: 10px;
+  }
+  .totalprice {
+    text-align: end;
+    margin: 10px 0px !important;
+  }
+  .offset {
+    padding-right: 2rem;
+  }
 }
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-  .tit{
+  .tit {
     margin-top: 10px !important;
   }
   .row {
@@ -210,7 +210,7 @@ padding-left: 10px;
   .offset {
     padding-right: 3.5rem;
   }
-  .rimuovi{
+  .rimuovi {
     margin-left: 30px;
     margin-bottom: 1rem;
   }

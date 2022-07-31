@@ -22,6 +22,7 @@ function filteredList(input) {
   resultsearch.value = results;
 }
 </script>
+
 <template>
   <div id="myOverlay" class="overlay overflow-auto">
     <span class="closebtn" @click="closeSearch()" title="Close Overlay">×</span>
@@ -31,7 +32,7 @@ function filteredList(input) {
           type="text"
           v-model="input"
           @input="filteredList(input)"
-          placeholder="Search.."
+          placeholder="Burger.."
           name="search"
         />
       </form>
@@ -61,14 +62,18 @@ function filteredList(input) {
     </div>
   </div>
 </template>
+
 <style>
 .overlay {
   height: 100%;
   width: 100%;
   display: block;
   position: fixed;
-  background:linear-gradient(rgb(102, 48, 30) 10% ,rgb(220, 99, 58)60%,rgb(102, 48, 30)80%);
- 
+  background: linear-gradient(
+    rgb(102, 48, 30) 10%,
+    rgb(220, 99, 58) 60%,
+    rgb(102, 48, 30) 80%
+  );
 }
 
 .overlay-content {
@@ -142,6 +147,7 @@ function filteredList(input) {
   color: #fff;
   cursor: pointer;
 }
+
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
   .result {
