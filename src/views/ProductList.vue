@@ -1,19 +1,14 @@
 <script setup>
 import { storeProduct } from "../stores/store_product.js";
-
-import FullScreen_Search from "../components/FullScreen_Search.vue";
 const productStore = storeProduct();
 productStore.getProducts();
 
-function openSearch() {
-  document.getElementById("myOverlay").style.display = "block";
-}
 </script>
 
 <template>
   <main>
     <div class="prductlist">
-      <full-screen_-search />
+   
       <div class="nav_bar container">
         <div class="row">
           <div class="col"><img class="logo p-0" src="../assets/logo.svg" /></div>
@@ -35,11 +30,13 @@ function openSearch() {
                 </router-link>
               </span>
               <span>
-                <img
+              <router-link aria-current="page" to="/fullSearch" class="me-4">
+              <img
                   class="nav_icon"
-                  @click="openSearch()"
+                 
                   src="../assets/icon/search.svg"
-                />
+                /></router-link>
+                
               </span>
             </div>
           </div>

@@ -1,22 +1,17 @@
 <script setup>
-
-import {useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 import { storeProduct } from "../stores/store_product";
 import { ref } from "vue";
 
-const emit = defineEmits(['r_load'])
-const router=useRouter();
-console.log(useRoute().params)
-
-
+const router = useRouter();
 
 const productStore = storeProduct();
 const products = productStore.products;
 const resultsearch = ref([]);
-const input=ref('');
+const input = ref("");
 
 function closeSearch() {
-  document.getElementById("myOverlay").style.display = "none";
+  router.back();
 }
 
 function filteredList(input) {
@@ -26,28 +21,6 @@ function filteredList(input) {
 
   resultsearch.value = results;
 }
-
-function closeClick(id){
-  let currentRoute= router.currentRoute.value.name;
-  if(currentRoute == 'ProductPage'){
-
-    
-    //router.push('/productPage/'+id);
-    // router.push(router.currentRoute.value.fullPath);
-    // document.getElementById("myOverlay").style.display = "none";
-    emit('r_load',id)
-
-   
-     //location.reload()
-      //location.href='https://incandescent-toffee-0c303a.netlify.app/productPage/'+id
-    
-  }
-  
-}
-
-
-
-
 </script>
 <template>
   <div id="myOverlay" class="overlay overflow-auto">
@@ -75,8 +48,10 @@ function closeClick(id){
           <div class="col col-sm-9 p-0">
             <div class="row row_name">
               <div class="col p-0">
-                <router-link  :to="{name:'ProductPage', params:{ id:item.identifier }}" @click="closeClick(item.identifier)">
-                {{item.name}}
+                <router-link
+                  :to="{ name: 'ProductPage', params: { id: item.identifier } }"
+                >
+                  {{ item.name }}
                 </router-link>
               </div>
             </div>
@@ -90,13 +65,10 @@ function closeClick(id){
 .overlay {
   height: 100%;
   width: 100%;
-  display: none;
+  display: block;
   position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.9);
+  background:linear-gradient(rgb(102, 48, 30) 10% ,rgb(220, 99, 58)60%,rgb(102, 48, 30)80%);
+ 
 }
 
 .overlay-content {
@@ -166,7 +138,7 @@ function closeClick(id){
   margin-top: 2rem !important;
 }
 
-.result h5 {
+.result a {
   color: #fff;
   cursor: pointer;
 }
