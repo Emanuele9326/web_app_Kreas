@@ -1,10 +1,14 @@
 <script setup>
-import { useRouter } from "vue-router";
+
+import {useRoute, useRouter } from "vue-router";
 import { storeProduct } from "../stores/store_product";
 import { ref } from "vue";
 
+const emit = defineEmits(['r_load'])
 const router=useRouter();
-console.log(router)
+console.log(useRoute().params)
+
+
 
 const productStore = storeProduct();
 const products = productStore.products;
@@ -26,12 +30,17 @@ function filteredList(input) {
 function closeClick(id){
   let currentRoute= router.currentRoute.value.name;
   if(currentRoute == 'ProductPage'){
-    //router.push('/productPage/'+id);
-     //document.getElementById("myOverlay").style.display = "none";
-      location.href='https://incandescent-toffee-0c303a.netlify.app/productPage/'+id
+
     
-  }else{
-    router.push('/productPage/'+id);
+    //router.push('/productPage/'+id);
+    // router.push(router.currentRoute.value.fullPath);
+    // document.getElementById("myOverlay").style.display = "none";
+    emit('r_load',id)
+
+   
+     //location.reload()
+      //location.href='https://incandescent-toffee-0c303a.netlify.app/productPage/'+id
+    
   }
   
 }
@@ -66,9 +75,9 @@ function closeClick(id){
           <div class="col col-sm-9 p-0">
             <div class="row row_name">
               <div class="col p-0">
-                <h5  @click="closeClick(item.identifier)" >{{
-                  item.name
-                }}</h5>
+                <router-link  :to="{name:'ProductPage', params:{ id:item.identifier }}" @click="closeClick(item.identifier)">
+                {{item.name}}
+                </router-link>
               </div>
             </div>
           </div>

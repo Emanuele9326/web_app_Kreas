@@ -1,10 +1,15 @@
-<script setup>
-import { useRoute } from "vue-router";
+<script setup >
+
+
+import { useRoute, useRouter } from "vue-router";
 import { storeProduct } from "../stores/store_product.js";
 import FullScreen_Search from "../components/FullScreen_Search.vue";
 
 const route = useRoute();
+const router= useRouter();
 let id = route.params.id;
+
+
 
 //detail product
 const productStore = storeProduct();
@@ -15,10 +20,20 @@ const detail = productStore.detailproduct;
 function openSearch() {
   document.getElementById("myOverlay").style.display = "block";
 }
+function r_load(ident){
+  console.log(router)
+document.getElementById("myOverlay").style.display = "none";
+// eslint-disable-next-line no-self-assign
+let url= window.location.origin+'/productPage/'+ ident
+console.log(url)
+window.location.href = url
+
+  
+}
 </script>
 <template>
   <div class="detailProduct">
-    <full-screen_-search />
+    <full-screen_-search  @r_load="r_load"/>
     <div class="nav_bar ">
       <div class="row p-md-3">
         <div class="col arrow">
