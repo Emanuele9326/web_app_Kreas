@@ -256,7 +256,7 @@ span {
 
   .items {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     padding: 0%;
     margin: 0px !important;
     background: linear-gradient(rgb(102, 48, 30) 20% ,rgb(220, 99, 58)60%,rgb(102, 48, 30)85%);
