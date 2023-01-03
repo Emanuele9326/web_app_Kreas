@@ -1,4 +1,5 @@
 <h1 algin="center">Web app per un e-commerce di un'azienda di carne sintetica</h1>
+<h4>L'applicazione è stata deployata su Netlify : https://incandescent-toffee-0c303a.netlify.app</h4>
 
 <details open="open">
   <summary>Sommario</summary>
@@ -24,8 +25,7 @@
 
 L'azienda Kreas vuole aprire un nuovo piccolo e-commerce totalmente mobile. Per sperimentare questa nuova possibilità di business chiede di sviluppare una nuova web app dall’esperienza minimale.
 
-L'applicazione è stata deployata su Netlify :
-- [Link Netlify] (https://incandescent-toffee-0c303a.netlify.app)</h4>
+
 
 #### <h3>Costruito con:</h3>
 
